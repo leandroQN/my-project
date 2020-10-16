@@ -12,7 +12,15 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
-      }
+      },
+      {
+        path: 'contactos',
+        loadChildren: () => import('./contactos/contactos.module').then(r => r.ContactosPageModule),
+      },
+      {
+        path: 'modalidades',
+        loadChildren: () => import('./modalidades/modalidades.module').then(n => n.ModalidadesPageModule),
+      },
     ],
   }
 ];

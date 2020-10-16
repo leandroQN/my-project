@@ -2,12 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-
+import {LayoutModule} from '../../../shared/layout/layout.module';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
-import { ClientComponent } from './client.component';
-import {ClientPageRoutingModule} from './client-routing.module';
-import {LayoutModule} from '../../shared/layout/layout.module';
-
+import { ContactosComponent } from './contactos.component';
+import {ContactosPageRoutingModule} from './contactos-routing.module';
 
 
 @NgModule({
@@ -16,9 +14,9 @@ import {LayoutModule} from '../../shared/layout/layout.module';
     FormsModule,
     LayoutModule,
     NgZorroAntdModule,
-    ClientPageRoutingModule
+    ContactosPageRoutingModule
   ],
-  declarations: [ ClientComponent],
+  declarations: [ ContactosComponent],
   exports: []
 })
-export class ClientPageModule {}
+export class ContactosPageModule {}
