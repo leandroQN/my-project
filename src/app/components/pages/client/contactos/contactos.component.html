@@ -1,2 +1,64 @@
 <h1>Numeros de Contactos</h1>
 <h3>Whatsapp:+57 3142295532</h3>
+
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm(validateForm.value)">
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Nombres</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Validando..." [nzErrorTip]="userErrorTpl">
+      <input nz-input formControlName="name" placeholder="Nombre" />
+      <ng-template #userErrorTpl let-control>
+        <ng-container *ngIf="control.hasError('required')">
+          Please input your username!
+        </ng-container>
+        <ng-container *ngIf="control.hasError('duplicated')">
+          The username is redundant!
+        </ng-container>
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Apellidos</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Validando..." [nzErrorTip]="userErrorTpl">
+      <input nz-input formControlName="lastName" placeholder="Apellidos" />
+      <ng-template #userErrorTpl let-control>
+        <ng-container *ngIf="control.hasError('required')">
+          Please input your username!
+        </ng-container>
+        <ng-container *ngIf="control.hasError('duplicated')">
+          The username is redundant!
+        </ng-container>
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>E-mail</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="emailErrorTpl">
+      <input nz-input formControlName="email" placeholder="email" type="email" />
+      <ng-template #emailErrorTpl let-control>
+        <ng-container *ngIf="control.hasError('email')">
+          No has ingresado un E-mail!
+        </ng-container>
+        <ng-container *ngIf="control.hasError('required')">
+          Ingresa tu E-mail!
+        </ng-container>
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Comentario</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Please write something here!">
+      <textarea formControlName="comment" nz-input rows="2" placeholder="Escribe aqui.."></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzOffset]="7" [nzSpan]="12">
+      <button nz-button nzType="primary" [disabled]="!validateForm.valid">Submit</button>
+      <button nz-button (click)="resetForm($event)">Reset</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

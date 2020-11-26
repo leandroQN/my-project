@@ -12,4 +12,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  private tituloHome:String ='El ciclomontañismo en Colombia';
+
 }

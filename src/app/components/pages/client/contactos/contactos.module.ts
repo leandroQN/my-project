@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {LayoutModule} from '../../../shared/layout/layout.module';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
@@ -9,13 +9,14 @@ import {ContactosPageRoutingModule} from './contactos-routing.module';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    LayoutModule,
-    NgZorroAntdModule,
-    ContactosPageRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        LayoutModule,
+        NgZorroAntdModule,
+        ContactosPageRoutingModule,
+        ReactiveFormsModule
+    ],
   declarations: [ ContactosComponent],
   exports: []
 })
